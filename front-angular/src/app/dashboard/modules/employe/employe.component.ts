@@ -140,6 +140,9 @@ export class EmployeComponent implements OnInit {
   showInfo(msg: string, tittle: string): void {
     this.toastrService.info(msg, tittle);
   }
+  showWarning(msg: string, tittle: string): void {
+    this.toastrService.warning(msg, tittle);
+  }
   SortArray(x:any, y:any) {
     if (x.ID < y.ID) { return -1; }
     if (x.ID > y.ID) { return 1; }
@@ -232,6 +235,21 @@ export class EmployeComponent implements OnInit {
     try {
       this.userService.insertUser(forms, sessionStorage['token']).subscribe(async (data) => {
         this.showInfo(globalData.texts.msgUserCreate, '');
+        window.location.reload();
+      },
+        async (error) => {
+          this.showError(globalData.texts.msgErrorInsertUser, '');
+          console.log('error', error);
+        })
+
+    } catch (error) {
+      console.log(error);
+    }
+  }
+  async deleteEmploye(employeId:any) {
+    try {
+      this.employeService.deleteEmployeById(employeId, sessionStorage['token']).subscribe(async (data) => {
+        this.showWarning(globalData.texts.msgwEmployeDelete, '');
         window.location.reload();
       },
         async (error) => {

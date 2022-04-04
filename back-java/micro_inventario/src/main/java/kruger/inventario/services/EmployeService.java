@@ -27,7 +27,7 @@ public class EmployeService {
      * @return Todos los registros de la tabla
      */
     public List<Employe> findAll() {
-        List<Employe> employes = employeRepository.findAll();
+        List<Employe> employes = employeRepository.findAllByEstatus();
         if (employes.isEmpty())
             throw new MyNotFoundException(String.format(
                     messageSource.getMessage("error.entity_cero_exist.message", null, LocaleContextHolder.getLocale()),

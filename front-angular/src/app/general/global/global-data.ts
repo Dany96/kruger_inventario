@@ -27,6 +27,7 @@ const texts = {
   msgErrorPassword: 'Las contraseñas no coinciden...!',
 
   msgUserCreate: 'Usuario creado correctamente...!',
+  msgwEmployeDelete: 'Empleado eliminado correctamente...!',
   msgErrorInsertUser: 'Error al crear el usuario',
 
   msgDateClear:'Debe seleccionar un rango de Fecha para la consulta'
