@@ -1,0 +1,71 @@
+mat-card {
+    max-width: auto;
+    overflow-x: auto;
+  }
+  
+  .center {
+    border-radius: 20px;
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .btn {
+    background-color: #54bc6c;
+    color: white;
+  }
+  
+  .input {
+    background-color: white;
+  }
+  
+  .mat-form-field {
+    font-size: 14px;
+    width: 100%;
+    margin-bottom: 2%;
+    border-radius: 10px;
+  }
+  
+  ::ng-deep .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
+    color: #FA9C28 !important;
+  }
+  ::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+    background-color: #EFF2F5 !important;
+  }
+  ::ng-deep .mat-form-field.mat-focused .mat-form-field-label {
+    color: #FA9C28 !important;
+  }
+  
+  .mat-table {
+    width: 100%;
+  }
+  .mat-table.resizing {
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: col-resize;
+  }
+  .mat-table .mat-cell span {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .mat-table .mat-header-cell {
+    position: relative;
+    background-color: #FA9C28;
+    color: white;
+  }
+  .mat-table .mat-header-cell:not(:last-child) .resize-holder {
+    cursor: col-resize;
+    width: 20px;
+    height: 100%;
+    position: absolute;
+    right: -10px;
+    top: 0;
+    z-index: 1;
+  }
+  .mat-table .mat-cell, .mat-table .mat-header-cell {
+    border-right: 1px solid rgba(0, 0, 0, 0.12);
+  }
+  .mat-table .mat-cell:not(:nth-child(1)), .mat-table .mat-header-cell:not(:nth-child(1)) {
+    padding: 0 10px;
+  }

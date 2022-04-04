@@ -1,0 +1,50 @@
+<div class="body">
+    <div id="bg"></div>
+    <mat-card>
+        <div>
+            <div class="row">
+                <div style="text-align: center;">
+                    <img class="logo">
+                </div>
+            </div>
+            <div class="row">
+                <div class="login">
+                    <form class="form" [formGroup]="formularioData" (ngSubmit)="login(formularioData.value)">
+                        <section>
+                            <div style="text-align: center;">
+                                <h1><b>Iniciar Sesión</b></h1>
+                            </div>
+                        </section>
+
+                        <div class="input-group mb-3">
+                            <input id="usupLogin" type="text" class="form-control" placeholder="Usuario"
+                                aria-label="Username" aria-describedby="basic-addon1" formControlName="usupLogin">
+                        </div>
+
+                        <div class="input-group mb-3">
+                            <input id="usupClave" type="password" class="form-control" placeholder="************"
+                                aria-label="Recipient's username" aria-describedby="basic-addon2"
+                                formControlName="usupClave">
+                        </div>
+
+                        <select class="form-select" aria-label="Default select example" formControlName="usupRol">
+                            <option value="" selected disabled hidden>Seleccione un Perfil</option>
+                            <option value="Administrador">ADMINISTRADOR</option>
+                            <option value="Empleado">EMPLEADO</option>
+                        </select>
+
+                        <section class="div">
+                            <div class="example-button-row">
+                                <button id="btnLogin" class="btn btn-primary btn-lg" mat-raised-button
+                                    color="primary">Iniciar
+                                    Sesión</button>
+                            </div>
+                        </section>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </mat-card>
+
+</div>

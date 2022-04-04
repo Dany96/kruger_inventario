@@ -1,0 +1,89 @@
+<!-- navbar panel superior de la pantalla -->
+<mat-toolbar class="mat-elevation-z8">
+    <button mat-icon-button (click)="sidenav.toggle()">
+        <mat-icon>
+            menu
+        </mat-icon>
+    </button>
+    Sistema de Inventario
+
+    <div class="logout">
+
+        <button mat-mini-fab matTooltip="{{User}}" [matMenuTriggerFor]="menu" [matTooltipPosition]="position.value"
+            color="ylet-primary-500">
+            <mat-icon style="margin-left: 8%;">perm_identity</mat-icon>
+        </button>
+
+        <mat-menu #menu="matMenu" class="mymegamenu">
+            <button mat-menu-item id="btnLogout" (click)="signOut()">
+                <mat-icon id="btnLogout" (click)="signOut()">power_settings_new</mat-icon>Logout
+            </button>
+        </mat-menu>
+    </div>
+</mat-toolbar>
+
+<!-- sidebar panel izquierdo de la pantalla, con sus opciones de menú-->
+<mat-sidenav-container>
+    <mat-sidenav #sidenav="matSidenav" class="mat-elevation-z8">
+
+        <img class="avatar mat-elevation-z8" src="../../../../assets/user-logo.png" />
+        <h4 class="name">{{User}}</h4>
+        <p class="designation">{{Rol}}</p>
+
+        <mat-divider></mat-divider>
+
+        <button id="btnRedirHome" mat-button class="menu-button" [routerLink]="['home']"
+            routerLinkActive="router-link-active">
+            <mat-icon>home</mat-icon>
+            <span>Inicio</span>
+        </button>
+
+        <mat-accordion>
+            <mat-expansion-panel *ngIf="Rol=='Administrador'">
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        <mat-icon>folder_shared</mat-icon>
+                        <span>Administrador</span>
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+                <button  mat-button class="menu-button" [routerLink]="['admin/employe']"
+                    routerLinkActive="router-link-active">
+                    <mat-icon>format_list_bulleted</mat-icon>
+                    <span>Listado Empleados</span>
+                </button>
+
+            </mat-expansion-panel>
+
+            <mat-expansion-panel *ngIf="Rol=='Empleado'">
+                <mat-expansion-panel-header>
+                    <mat-panel-title mat-button class="menu-button">
+                        <mat-icon>edit</mat-icon>
+                        <span >Empleado</span>
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+                <button mat-button class="menu-button"
+                    [routerLink]="['employe/profile']" routerLinkActive="router-link-active">
+                    <mat-icon>how_to_reg</mat-icon>
+                    <span>Perfil</span>
+                </button>
+
+
+            </mat-expansion-panel>
+
+        </mat-accordion>
+
+        <mat-divider></mat-divider>
+
+        <!-- <button mat-button class="menu-button">
+            <mat-icon>info</mat-icon>
+            <span>A cerca de</span>
+        </button> -->
+
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+        <router-outlet>
+        </router-outlet>
+    </mat-sidenav-content>
+
+</mat-sidenav-container>

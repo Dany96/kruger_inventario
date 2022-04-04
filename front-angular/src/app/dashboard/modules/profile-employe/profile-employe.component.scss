@@ -1,0 +1,74 @@
+mat-card {
+    border-radius: 10px;
+    max-width: auto;
+    overflow-x: auto;
+  }
+  
+  .form-control {
+    background-color: #EFF2F5;
+  }
+  
+  .form-select {
+    background-color: #EFF2F5;
+  }
+  
+  ::ng-deep .mat-form-field {
+    font-size: 12px;
+  }
+  
+  mat-select {
+    font-size: 12px;
+  }
+  
+  #tittle {
+    color: #5D6062;
+    font-weight: bold;
+  }
+  
+  .btn{
+    background-color: #54bc6c;
+    color: white;
+  }
+  
+  .mat-form-field {
+    width: 100%;
+  }
+  
+  /* permite asignar los colores en los input de los formularios */
+  ::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+    background-color: #EFF2F5 !important;
+  }
+  ::ng-deep .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
+    color: #FA9C28!important;
+  }
+  ::ng-deep .mat-form-field.mat-focused .mat-form-field-label {
+    color: black!important;
+  }
+  
+  /* esto permite cambiar el color del switch */
+  :host ::ng-deep .mat-slide-toggle.mat-checked:not(.mat-disabled) .mat-slide-toggle-bar {
+    background-color: #FA9C28 ;
+  }
+  :host ::ng-deep  .mat-slide-toggle.mat-checked:not(.mat-disabled) .mat-slide-toggle-thumb {
+    background-color: #FA9C28 ;
+  }
+  
+  mat-divider {
+    margin-top: 1px;
+    background-color: rgba(255, 255, 255, 0.5);
+  }
+  
+  form {
+    margin-top: 1%;
+  }
+  
+  thead{
+    background-color: #D4AE38;
+    border-radius: 10px;
+  }
+  
+  table{
+    border-collapse: collapse;
+    border-radius: 1em;
+    overflow: hidden;
+  }

@@ -1,0 +1,129 @@
+.ylb-app-content {
+    padding: 16px;
+}
+
+.bell-icon {
+    margin-right: 20px!important;
+    display: inline-block;
+    vertical-align: bottom;
+}
+
+.logout {
+    display: inline-block;
+    width: 100%;
+    text-align: right;
+    vertical-align: bottom;
+}
+
+.mat-menu-item:hover {
+    color: #C47A41;
+}
+
+.mat-menu-item:hover .mat-icon {
+    color: #C47A41;
+}
+
+mat-toolbar {
+    /* background: #004a9f; */
+    /* background:#002b5c; */
+    background: #205cac;
+    color: white;
+}
+
+mat-sidenav {
+    margin: 2px;
+    width: 278px;
+    border-right: none;
+    /* background: #002b5c; */
+    background: #EEF0F1;
+    color: #54bc6c   ;
+    border-radius: 10px;
+    padding: 16px;
+    text-align: center;
+}
+
+mat-expansion-panel {
+    /* background: #002b5c; */
+    background: #EEF0F1;
+    color: #54bc6c ;
+    text-align: left;
+}
+
+mat-sidenav-content {
+    background-color: #DFE1E3;
+}
+
+.content {
+    height: calc(100vh - 98px);
+    border-radius: 10px;
+    margin: 16px;
+    margin-left: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    color: lightgray;
+}
+
+mat-sidenav-container {
+    height: calc(100vh - 65px);
+}
+
+.menu-button {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: 1rem;
+}
+
+mat-icon {
+    margin-right: 8px;
+}
+
+.avatar {
+    margin-top: 16px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: white;
+}
+
+.name {
+    margin-top: 8px;
+    font-weight: normal;
+}
+
+.designation {
+    margin-top: 2px;
+    font-size: 0.7rem;
+    color:#54bc6c ;
+}
+
+mat-divider {
+    margin-top: 16px;
+    margin-bottom: 16px;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+mat-accordion {
+    color: #54bc6c ;
+    /* background-color:#002b5c; */
+    background-color: #EEF0F1;
+    font-size: 1rem;
+    margin-left: 0%;
+}
+
+mat-panel-title {
+    color: #54bc6c ;
+    /* background-color:#002b5c ; */
+    background-color: #EEF0F1;
+    font-size: 1rem;
+    margin-left: 0%;
+}
+
+mat-expansion-panel-header {
+    color: #54bc6c ;
+    background-color: #EEF0F1 !important;
+    /* background-color:#002b5c !important; */
+}

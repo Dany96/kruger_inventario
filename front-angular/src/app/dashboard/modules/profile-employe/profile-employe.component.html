@@ -1,0 +1,149 @@
+<div class="content">
+    <mat-card>
+        <section>
+            <mat-label id="tittle">DATOS DEL EMPLEADO</mat-label>
+            <mat-divider></mat-divider>
+            <div class="row" id="divider">
+                <div class="col-sm-5 col-md-3">
+                    <div class="form-group">
+                        <mat-form-field appearance="outline">
+                            <mat-label>Cédula</mat-label>
+                            <input matInput type="text" [(ngModel)]="employeProfile.cedula" maxlength="10" readonly
+                                oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" />
+                        </mat-form-field>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-5 col-md-4">
+                    <div class="form-group">
+                        <mat-form-field appearance="outline">
+                            <mat-label>Nombres</mat-label>
+                            <input matInput type="text" [(ngModel)]="employeProfile.nombre" maxlength="100">
+                        </mat-form-field>
+                    </div>
+                </div>
+
+                <div class="col-sm-5 col-md-4">
+                    <div class="form-group">
+                        <mat-form-field appearance="outline">
+                            <mat-label>Apellidos</mat-label>
+                            <input matInput type="text" [(ngModel)]="employeProfile.apellido" maxlength="100">
+                        </mat-form-field>
+                    </div>
+                </div>
+            </div>
+
+            <mat-label id="tittle">Datos personales y de contacto</mat-label>
+            <mat-divider></mat-divider>
+            <div class="row" id="divider">
+                <div class="col-sm-5 col-md-3">
+                    <div class="form-group">
+                        <mat-form-field appearance="outline">
+                            <mat-label>Fecha Nacimiento</mat-label>
+                            <input matInput [matDatepicker]="fromDate"
+                            [(ngModel)]="employeProfile.fechaNac">
+                        <mat-datepicker-toggle matSuffix [for]="fromDate"></mat-datepicker-toggle>
+                        <mat-datepicker #fromDate></mat-datepicker>
+                            <!-- <input matInput type="date" [(ngModel)]="employeProfile.fechaNac"> -->
+                        </mat-form-field>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-5 col-md-4">
+                    <div class="form-group">
+                        <mat-form-field appearance="outline">
+                            <mat-label>Teléfono</mat-label>
+                            <input matInput type="text" [(ngModel)]="employeProfile.telefono" maxlength="10"
+                                oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" />
+                        </mat-form-field>
+                    </div>
+                </div>
+
+                <div class="col-sm-5 col-md-4">
+                    <div class="form-group">
+                        <mat-form-field appearance="outline">
+                            <mat-label>Correo</mat-label>
+                            <input matInput type="email" [(ngModel)]="employeProfile.correo" maxlength="100">
+                        </mat-form-field>
+                    </div>
+                </div>
+            </div>
+
+            <mat-label id="tittle">Dirección domiciliaria</mat-label>
+            <mat-divider></mat-divider>
+            <div class="row" id="divider">
+                <div class="col-sm-5 col-md-8">
+                    <div class="form-group">
+                        <mat-form-field appearance="outline">
+                            <mat-label>Dirección</mat-label>
+                            <input matInput type="text" [(ngModel)]="employeProfile.direccion" maxlength="500">
+                        </mat-form-field>
+                    </div>
+                </div>
+            </div>
+
+            <mat-label id="tittle">Estado de vacunación</mat-label>
+            <mat-divider></mat-divider>
+            <div class="row" id="divider">
+                <div class="col-sm-5 col-md-4">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Estado de Vacunación</mat-label>
+                        <mat-select placeholder="Estado de Vacunación" [(ngModel)]="employeProfile.estadoVac">
+                            <mat-option *ngFor="let estado of estadoV.estadoVac" [value]="estado.id">
+                                {{estado.value}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+            </div>
+
+            <div class="row" *ngIf="employeProfile.estadoVac==1">
+                <div class="col-sm-5 col-md-3">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Tipo de Vacunación</mat-label>
+                        <mat-select placeholder="Tipo de Vacunación" [(ngModel)]="employeProfile.tipoVac">
+                            <mat-option *ngFor="let tipo of tipoVac.tipoVac" [value]="tipo.id">
+                                {{tipo.value}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+
+                <div class="col-sm-5 col-md-3">
+                    <div class="form-group">
+                        <mat-form-field appearance="outline">
+                            <!-- <mat-label>Fecha Vacunación</mat-label>
+                            <input matInput type="date" [(ngModel)]="employeProfile.fechaVac"> -->
+                            <mat-label>Fecha Vacunación</mat-label>
+                            <input matInput [matDatepicker]="fromDate"
+                                [(ngModel)]="employeProfile.fechaVac">
+                            <mat-datepicker-toggle matSuffix [for]="fromDate"></mat-datepicker-toggle>
+                            <mat-datepicker #fromDate></mat-datepicker>
+                        </mat-form-field>
+                    </div>
+                </div>
+
+                <div class="col-sm-5 col-md-2">
+                    <div class="form-group">
+                        <mat-form-field appearance="outline">
+                            <mat-label>N. Dosis</mat-label>
+                            <input matInput type="number" [(ngModel)]="employeProfile.numDosis" min="1"
+                                oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*?)\..*/g, '$1');">
+                        </mat-form-field>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+        <mat-action-row>
+            <div class="col-auto">
+                <button id="btnCrtTicket" type="button" class="btn" mat-raised-button color="primary"
+                    (click)="validateField()">Actualizar Datos</button>
+            </div>
+        </mat-action-row>
+    </mat-card>
+</div>

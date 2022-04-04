@@ -1,0 +1,56 @@
+::ng-deep.mat-dialog-container {
+    border-radius: 20px !important;
+    background-color: #f7f8f8 !important;
+}
+
+.btnAccept {
+    background-color: #FA9C28;
+    color: white;
+}
+
+.btnClose {
+    background-color: #54bc6c;
+    color: white;
+}
+
+h1 {
+    text-align: center;
+    width: 100%;
+    color: white;
+}
+
+.header {
+    background-color: #205cac;
+    /* background-color: #FA9C28; */
+    margin-bottom: 2%;
+    border-radius: 14px;
+}
+
+.form-control:focus {
+    border-color: #FA9C28;
+    box-shadow: 0 0 0 0.2rem rgba(250, 156, 40, 0.25);
+}
+
+.form-select:focus {
+    border-color: #FA9C28;
+    box-shadow: 0 0 0 0.2rem rgba(250, 156, 40, 0.25);
+}
+
+mat-divider {
+    margin-top: 1px;
+    background-color: rgba(255, 255, 255, 0.5);
+  }
+  
+
+/* permite asignar los colores en los input de los formularios */
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+    background-color: #EFF2F5 !important;
+}
+
+::ng-deep .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
+    color: #FA9C28 !important;
+}
+
+::ng-deep .mat-form-field.mat-focused .mat-form-field-label {
+    color: black !important;
+}

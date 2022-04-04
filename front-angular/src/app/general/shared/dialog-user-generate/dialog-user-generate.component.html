@@ -1,0 +1,47 @@
+<mat-toolbar class="header">
+    <h1>{{data.titleDlg}}</h1>
+</mat-toolbar>
+
+<mat-dialog-content>
+    <div class="row" id="divider">
+        <mat-form-field appearance="outline">
+            <mat-label>Usuario</mat-label>
+            <input matInput type="text"  maxlength="100" [(ngModel)]="usuario"
+            [formControl]="usuerFormControl"
+                oninput="this.value = this.value.replace(/[^a-zA-Z ]/g, '').replace(/(\..*?)\..*/g, '$1');" />
+                <mat-error *ngIf="usuerFormControl.hasError('required')">
+                    Usuario es <strong>requerido</strong>
+                </mat-error>
+        </mat-form-field>
+    </div>
+
+    <div class="row" id="divider">
+        <mat-form-field appearance="outline">
+            <mat-label>Nueva Contraseña</mat-label>
+            <input id="newpass" [type]="pwToggle.type" [(ngModel)]="newpassword" matInput
+                [formControl]="newpasswordFormControl" placeholder="**************">
+            <button mat-icon-button matSuffix appPasswordToggle #pwToggle="appPasswordToggle">
+                <mat-icon>{{ pwToggle.icon}}</mat-icon>
+            </button>
+            <mat-error *ngIf="newpasswordFormControl.hasError('required')">
+                Contraseña es <strong>requerida</strong>
+            </mat-error>
+        </mat-form-field>
+    </div>
+
+    <div class="row" id="divider">
+        <mat-form-field appearance="outline">
+            <mat-label>Confirmar Contraseña</mat-label>
+            <input id="inputCPass" [type]="pwToggle.type" [(ngModel)]="confirmpassword" matInput
+                [formControl]="confirmpasswordFormControl" placeholder="**************">
+            <mat-error *ngIf="confirmpasswordFormControl.hasError('required')">
+                Confirmar contraseña es <strong>requerida</strong>
+            </mat-error>
+        </mat-form-field>
+    </div>
+
+</mat-dialog-content>
+<mat-dialog-actions>
+    <button class="btnClose" mat-raised-button color="primary" (click)="dialogClose()">Cerrar</button>
+    <button class="btnAccept" mat-raised-button color="primary" (click)="validateField()">{{data.button}}</button>
+</mat-dialog-actions>
